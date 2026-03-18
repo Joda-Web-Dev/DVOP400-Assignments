@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: git-workflows-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: git-workflows-app
+  template:
+    metadata:
+      labels:
+        app: git-workflows-app
+    spec:
+      containers:
+        - name: git-workflows-app
+          image: jodawebdev/git-workflows:latest
+          ports:
+            - containerPort: 8080
