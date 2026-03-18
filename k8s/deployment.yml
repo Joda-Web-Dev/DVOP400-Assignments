@@ -15,5 +15,13 @@ spec:
       containers:
         - name: git-workflows-app
           image: jodawebdev/git-workflows:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
